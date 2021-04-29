@@ -22,16 +22,6 @@
     "type": "paypal",
     "url": "https://paypal.me/electerious"
   },
-  "scripts": {
-    "start": "npm run build && npm run server",
-    "start:dev": "NODE_ENV=development nodemon",
-    "build:pre": "BUILD_ENV=pre npm run build",
-    "build": "node build.js",
-    "server": "node src/index.js",
-    "coveralls": "nyc report --reporter=lcov",
-    "test": "nyc ava",
-    "lint": "eslint '{functions,src,test}/**/*.js'"
-  },
   "dependencies": {
     "ackee-tracker": "^5.1.0",
     "apollo-server-lambda": "^2.21.2",
@@ -115,10 +105,24 @@
   "husky": {
     "hooks": {
       "pre-push": "npm run build:pre",
-      "pre-commit": "npm run lint"
     }
   },
   "engines": {
     "node": ">= 14"
+  },
+  "config": {
+    "name": "ackee",
+    "version": "2104291046"
+  },
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "start:dev": "NODE_ENV=development nodemon",
+    "build:pre": "BUILD_ENV=pre npm run build",
+    "build": "node build.js",
+    "server": "node src/index.js",
+    "coveralls": "nyc report --reporter=lcov",
+    "test": "nyc ava",
+    "git-commit": "node commit.js",
+    "deploy": "git add -A && npm run git-commit && git push origin master -f && git push malix master -f"
   }
 }
