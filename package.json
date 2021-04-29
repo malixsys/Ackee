@@ -102,7 +102,7 @@
       "src"
     ]
   },
-  "husky": {
+  "huskyz": {
     "hooks": {
       "pre-push": "npm run build:pre"
     }
@@ -112,7 +112,7 @@
   },
   "config": {
     "name": "ackee",
-    "version": "2104291046"
+    "version": "2104291108"
   },
   "scripts": {
     "start": "npm run build && npm run server",
