@@ -108,11 +108,12 @@
     }
   },
   "engines": {
-    "node": ">= 14"
+    "node": "14.16.1",
+    "npm": "6.14.12"
   },
   "config": {
     "name": "ackee",
-    "version": "2104291108"
+    "version": "2104291152"
   },
   "scripts": {
     "start": "npm run build && npm run server",
