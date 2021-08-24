@@ -31,7 +31,7 @@
     "coveralls": "nyc report --reporter=lcov",
     "test": "nyc ava",
     "git-commit": "node commit.js",
-    "deploy": "git add -A && npm run git-commit && git push origin master -f && git push malix master -f"
+    "deploy": "git add -A && npm run git-commit && git push origin master -f && git push malix dokku -f"
   },
   "dependencies": {
     "ackee-tracker": "^5.1.0",
@@ -121,6 +121,6 @@
   },
   "config": {
     "name": "ackee",
-    "version": "2107051420"
+    "version": "2108241320"
   }
 }
