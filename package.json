@@ -22,17 +22,6 @@
     "type": "paypal",
     "url": "https://paypal.me/electerious"
   },
-  "scripts": {
-    "start": "npm run build && npm run server",
-    "start:dev": "NODE_ENV=development nodemon",
-    "build:pre": "BUILD_ENV=pre npm run build",
-    "build": "node build.js",
-    "server": "node src/index.js",
-    "coveralls": "nyc report --reporter=lcov",
-    "test": "nyc ava",
-    "git-commit": "node commit.js",
-    "deploy": "git add -A && npm run git-commit && git push origin master -f && git push dokku master -f"
-  },
   "dependencies": {
     "ackee-tracker": "^5.1.0",
     "apollo-server-lambda": "^2.25.1",
@@ -119,8 +108,19 @@
     "node": "14.17",
     "npm": "6.14.13"
   },
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "dev": "NODE_ENV=development nodemon",
+    "build:pre": "BUILD_ENV=pre npm run build",
+    "build": "node build.js",
+    "server": "node src/index.js",
+    "coveralls": "nyc report --reporter=lcov",
+    "test": "nyc ava",
+    "git-commit": "node commit.js",
+    "deploy": "git add -A && npm run git-commit && git push origin master -f && git push dokku master -f"
+  },
   "config": {
     "name": "ackee",
-    "version": "2108241320"
+    "version": "2108241530"
   }
 }
